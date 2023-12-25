@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW5</title>
+    <style>
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .input-block {
+        max-width: 800px;
+        padding: 100px 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .text {
+        border: 1px solid lightblue;
+        border-radius: 20px;
+        padding: 10px 5px;
+        top: 50%;
+        position: absolute;
+      }
+      .side-div {
+        display: none;
+        width: 100px;
+        height: 35px;
+        background-color: lightblue;
+        position: absolute;
+        top: 50%;
+        left: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-block">
+        <input class="text" id="textField" />
+        <div class="side-div" id="sideDiv"></div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const textField = document.getElementById("textField");
+            const sideDiv = document.getElementById("sideDiv");
+
+            textField.addEventListener("focus", function () {
+              sideDiv.style.display = "block";
+            });
+
+            textField.addEventListener("blur", function () {
+              sideDiv.style.display = "none";
+            });
+          });
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
